@@ -15,8 +15,8 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         for (Entity bullet : world.getEntities(Bullet.class)) {
             double changeX = Math.cos(Math.toRadians(bullet.getRotation()));
             double changeY = Math.sin(Math.toRadians(bullet.getRotation()));
-            bullet.setX(bullet.getX() + changeX*3.5);
-            bullet.setY(bullet.getY() + changeY*3.5);
+            bullet.setX(bullet.getX() + changeX*8.5);
+            bullet.setY(bullet.getY() + changeY*8.5);
         }
     }
 
@@ -26,7 +26,7 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
         bullet.setX(shooter.getX());
         bullet.setY(shooter.getY());
         bullet.setRotation(shooter.getRotation());
-        bullet.setPolygonCoordinates(-3,-3,3,0,-3,3);
+        bullet.setPolygonCoordinates(-3,-2, 3,-2, 3,2, -3,2);
         return bullet;
     }
 

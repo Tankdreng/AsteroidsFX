@@ -28,11 +28,10 @@ public class PlayerControlSystem implements IEntityProcessingService {
             if (gameData.getKeys().isDown(GameKeys.UP)) {
                 double changeX = Math.cos(Math.toRadians(player.getRotation()));
                 double changeY = Math.sin(Math.toRadians(player.getRotation()));
-                player.setX(player.getX() + changeX);
-                player.setY(player.getY() + changeY);
+                player.setX(player.getX() + changeX*2.5);
+                player.setY(player.getY() + changeY*2.5);
             }
             if (gameData.getKeys().isPressed(GameKeys.SPACE)) {
-                System.out.println("Bang");
                 for (BulletSPI bullet : getBulletSPIs()) {
                     world.addEntity(bullet.createBullet(player, gameData));
                 }
